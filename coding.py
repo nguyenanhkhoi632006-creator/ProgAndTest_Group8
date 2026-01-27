@@ -2,14 +2,28 @@
 
 
 #---------class room-----------
-
+class Room:
+    def __init__(self, number, room_type, price):
+        self.number = number
+        self.room_type = room_type
+        self.price = price
+        self.booked = False
 
 #---------class booking---------
 
 
 #--------class hotelsystem--------
 
-
+class HotelSystem:
+    def __init__(self):
+        self.users = [User("admin123", "admin123", "admin")]
+        self.rooms = [
+            Room(101, "Standard", 500000),
+            Room(102, "Deluxe", 800000),
+            Room(103, "VIP", 1200000)
+        ]
+        self.bookings = []
+        self.bid = 1
     # ---------- REGISTER ----------
     
 
@@ -18,7 +32,11 @@
 
     # ---------- VIEW ROOMS ----------
     
-
+    def show_rooms(self):
+        print("\nROOM LIST")
+        for r in self.rooms:
+            status = "Booked" if r.booked else "Available"
+            print(r.number, "|", r.room_type, "|", r.price, "|", status)
     # ---------- VIEW CUSTOMERS (ADMIN) ----------
    
 
@@ -105,3 +123,4 @@
 
     # ---------- START ----------
     
+
