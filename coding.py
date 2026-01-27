@@ -5,7 +5,17 @@
 
 
 #---------class booking---------
-
+def __init__(self, bid, username, name, phone, room, checkin, checkout, days, total):
+        self.bid = bid
+        self.username = username
+        self.name = name
+        self.phone = phone
+        self.room = room
+        self.checkin = checkin
+        self.checkout = checkout
+        self.days = days
+        self.total = total
+        self.paid = False
 
 #--------class hotelsystem--------
 
