@@ -1,5 +1,8 @@
 #---------class user----------
-
+ def __init__(self, username, password, role):
+        self.username = username
+        self.password = password
+        self.role = role
 
 #---------class room-----------
 class Room:
@@ -158,6 +161,7 @@ class HotelSystem:
 
     # ---------- START ----------
     
+
 
 
 
