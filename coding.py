@@ -1,3 +1,7 @@
+from datetime import datetime
+
+def has_letter_and_number(text):
+    return any(c.isalpha() for c in text) and any(c.isdigit() for c in text)
 #---------class user----------
 class User:
     def __init__(self, username, password, role):
@@ -249,6 +253,7 @@ class HotelSystem:
 
 
 HotelSystem().start()
+
 
 
 
