@@ -123,61 +123,14 @@ class HotelSystem:
 
         print("Booking not found!")
     # ---------- PAYMENT ----------
- def payment(self, username):
-        try:
-            bid = int(input("Booking ID: "))
-        except:
-            print("Invalid Booking ID!")
-            return
-
-        for b in self.bookings:
-            if b.bid == bid and b.username == username:
-                if b.paid:
-                    print("Payment already completed!")
-                    return
-                print("Total price:", b.total)
-                if input("Pay now? (y/n): ") == "y":
-                    b.paid = True
-                    print("Payment successful!")
-                return
-
-        print("Booking not found!")    
+    
 
     # ---------- ADMIN MENU ----------
- def admin_menu(self):
-        while True:
-            print("\n===== ADMIN MENU =====")
-            print("1. View room list")
-            print("2. View customer list")
-            print("3. View booking list")
-            print("4. Logout")
-
-            c = input("Choose: ")
-            if c == "1":
-                self.show_rooms()
-            elif c == "2":
-                self.view_customers()
-            elif c == "3":
-                for b in self.bookings:
-                    status = "Paid" if b.paid else "Unpaid"
-                    print(
-                        "ID:", b.bid,
-                        "| Name:", b.name,
-                        "| Phone:", b.phone,
-                        "| Room:", b.room,
-                        "| Check-in:", b.checkin,
-                        "| Check-out:", b.checkout,
-                        "| Days:", b.days,
-                        "| Total:", b.total,
-                        "| Status:", status
-                    )
-            elif c == "4":
-                break    
+    
 
     # ---------- CUSTOMER MENU ----------
     
 
     # ---------- START ----------
     
-
 
