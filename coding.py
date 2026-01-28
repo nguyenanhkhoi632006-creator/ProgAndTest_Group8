@@ -35,7 +35,24 @@ class HotelSystem:
         self.bookings = []
         self.bid = 1
     # ---------- REGISTER ----------
-    
+     def register(self):
+        username = input("Username: ")
+        if not has_letter_and_number(username):
+            print("Username must contain letters and numbers!")
+            return
+
+        if any(u.username == username for u in self.users):
+            print("Username already exists!")
+            return
+
+        password = input("Password: ")
+        if not has_letter_and_number(password):
+            print("Password must contain letters and numbers!")
+            return
+
+        self.users.append(User(username, password, "customer"))
+        print("Registration successful!")
+
 
     # ---------- LOGIN ----------
     
@@ -133,4 +150,5 @@ class HotelSystem:
 
     # ---------- START ----------
     
+
 
