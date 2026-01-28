@@ -43,7 +43,7 @@ class HotelSystem:
         self.bookings = []
         self.bid = 1
     # ---------- REGISTER ----------
-      def register(self):
+    def register(self):
         username = input("Username: ")
 
         if not has_letter_and_number(username):
@@ -65,7 +65,7 @@ class HotelSystem:
 
 
     # ---------- LOGIN ----------
-     def login(self):
+    def login(self):
         username = input("Username: ")
         password = input("Password: ")
 
@@ -83,7 +83,11 @@ class HotelSystem:
             status = "Booked" if r.booked else "Available"
             print(r.number, "|", r.room_type, "|", r.price, "|", status)
     # ---------- VIEW CUSTOMERS (ADMIN) ----------
-   
+    def view_customers(self):
+        print("\nCUSTOMER LIST")
+        for u in self.users:
+            if u.role =="customer":
+                print("Username:",u.username)
 
     # ---------- BOOK ROOM ----------
     def book_room(self, username):
@@ -140,7 +144,7 @@ class HotelSystem:
 
     # ---------- CANCEL BOOKING ----------
     
- def cancel_booking(self, username):
+    def cancel_booking(self, username):
         try:
             bid = int(input("Booking ID: "))
         except:
@@ -158,7 +162,7 @@ class HotelSystem:
 
         print("Booking not found!")
     # ---------- PAYMENT ----------
-        def payment(self, username):
+    def payment(self, username):
         try:
             bid = int(input("Booking ID: "))
         except:
@@ -178,7 +182,7 @@ class HotelSystem:
 
         print("Booking not found!")
     # ---------- ADMIN MENU ----------
-     def admin_menu(self):
+    def admin_menu(self):
         while True:
             print("\n===== ADMIN MENU =====")
             print("1. View room list")
@@ -210,7 +214,7 @@ class HotelSystem:
 
     # ---------- CUSTOMER MENU ----------
     def customer_menu(self, user):
-    while True:
+     while True:
         print("\n===== CUSTOMER MENU =====")
         print("1. View room list")
         print("2. Book room")
@@ -231,7 +235,7 @@ class HotelSystem:
             break
 
     # ---------- START ----------
-        def start(self):
+    def start(self):
         while True:
             print("\n===== HOTEL ROOM BOOKING SYSTEM =====")
             print("1. Register")
