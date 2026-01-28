@@ -205,10 +205,52 @@ class HotelSystem:
                 break
 
     # ---------- CUSTOMER MENU ----------
-    
+    def customer_menu(self, user):
+    while True:
+        print("\n===== CUSTOMER MENU =====")
+        print("1. View room list")
+        print("2. Book room")
+        print("3. Cancel booking")
+        print("4. Payment")
+        print("5. Logout")
+
+        c = input("Choose: ")
+        if c == "1":
+            self.show_rooms()
+        elif c == "2":
+            self.book_room(user.username)
+        elif c == "3":
+            self.cancel_booking(user.username)
+        elif c == "4":
+            self.payment(user.username)
+        elif c == "5":
+            break
 
     # ---------- START ----------
-    
+        def start(self):
+        while True:
+            print("\n===== HOTEL ROOM BOOKING SYSTEM =====")
+            print("1. Register")
+            print("2. Login")
+            print("3. Exit")
+
+            c = input("Choose: ")
+            if c == "1":
+                self.register()
+            elif c == "2":
+                user = self.login()
+                if user:
+                    if user.role == "admin":
+                        self.admin_menu()
+                    else:
+                        self.customer_menu(user)
+            elif c == "3":
+                break
+
+
+HotelSystem().start()
+
+
 
 
 
