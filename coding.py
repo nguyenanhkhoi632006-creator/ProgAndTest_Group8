@@ -55,7 +55,15 @@ class HotelSystem:
 
 
     # ---------- LOGIN ----------
-    
+     def login(self):
+        username = input("Username: ")
+        password = input("Password: ")
+
+        for u in self.users:
+            if u.username == username and u.password == password:
+                return u
+        print("Login failed!")
+        return None
 
     # ---------- VIEW ROOMS ----------
     
@@ -150,5 +158,6 @@ class HotelSystem:
 
     # ---------- START ----------
     
+
 
 
