@@ -1,3 +1,4 @@
+
 from datetime import datetime
 
 def has_letter_and_number(text):
@@ -18,7 +19,8 @@ class Room:
         self.booked = False
 
 #---------class booking---------
-def __init__(self, bid, username, name, phone, room, checkin, checkout, days, total):
+class Booking:
+    def __init__(self, bid, username, name, phone, room, checkin, checkout, days, total):
         self.bid = bid
         self.username = username
         self.name = name
